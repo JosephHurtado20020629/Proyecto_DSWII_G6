@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/Css/Formulario.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet"/>
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/icons/Favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="${pageContext.request.contextPath}/Js/jquery-3.5.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<a href="${pageContext.request.contextPath}/jsp/loginAdmin.jsp" class="loginAdmin">Administrador</a>
+<img class="logo" src="${pageContext.request.contextPath}/icons/Logo azul.svg" alt="No se encuentra">
+<img class="wave" src="${pageContext.request.contextPath}/icons/Trazado 66.png"/>
+<div class="container">
+    <div class="img">
+        <img src="${pageContext.request.contextPath}/icons/undraw_web_shopping_dd4l.svg"/>
+    </div>
+    <div class="login-content">
+        <form id="form" action="${pageContext.request.contextPath}/client" method="post">
+            <img src="${pageContext.request.contextPath}/icons/Grupo 64.svg"/>
+            <img src="${pageContext.request.contextPath}/icons/Mujer_1.svg" alt="No se encuentra la imagen">
+            <h2 class="title">Bienvenidos</h2>
+            <div class="input-div one">
+                <div class="i">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="div">
+                    <h5>Usuario</h5>
+                    <input type="text" id="user" name="user" class="input" autocomplete="off" required="true"/>
+
+                </div>
+            </div>
+            <div class="input-div two">
+                <div class="i">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="div">`
+                    <h5>Contraseña</h5>
+                    <input type="password" id="password" name="password" class="input" autocomplete="off" required="true"/>
+
+                </div>
+            </div>
+
+            <button type="submit" id="btn" name="opcion" value="login">Ingresar</button>
+            <p style="color: red" id="error">${mensaje}</p>
+            <a href="${pageContext.request.contextPath}/jsp/registro.jsp">Registrate</a>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="${pageContext.request.contextPath}/Js/main.js"></script>
+<script>
+    var ruta = "${pageContext.request.contextPath}/";
+</script>
+ 
+</body>
+</html>

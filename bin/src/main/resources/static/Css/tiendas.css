@@ -1,0 +1,52 @@
+#img-tiendas{
+    width: 80vw;
+    height: 40%;
+    border: 5px solid #384358;
+    border-radius: 30px;
+    position: relative;
+    top: 15vh;
+    left: 10%;
+    padding: 20px;
+}
+#img-tiendas img{
+    width: 20%;
+    margin-left: 40%;
+}
+#img-tiendas h2{
+    color: #384358;
+    font-family: "Poppins" , sans-serif;
+    margin: 20px ;
+    text-align: center;
+}
+.detalle{
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    left: 20%;
+    top: 15vh;
+    border: 2px solid #384358;
+    width: 20%;
+    color: #384358;
+    display: inline-block;
+    margin: 60px;
+}
+.detalle h3{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    color: white;
+    background: #384358;
+}
+.detalle ul{
+    padding: 10px;
+    list-style: none;
+}
+#title-map{
+    margin-top: 20vh;
+    text-align: center;
+    color: #384358;
+}
+iframe{
+    position: relative;
+    left:18% ;
+    margin: 40px;
+}

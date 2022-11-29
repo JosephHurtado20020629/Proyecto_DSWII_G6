@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+ <title>Registro</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/Css/Registro.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet"/>
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/icons/Favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="${pageContext.request.contextPath}/Js/jquery-3.5.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+<body>
+<div class="login-content">
+        <form action="/grabar" method="post" th:object="${cliente}">
+            <img src="../icons/Grupo64.svg"/>
+            <img src="../icons/Mujer_1.svg"/>
+            <h2 class="title">REGISTRO</h2>
+            <div class="input-div one">
+                <div class="i">
+                    <i class="fas fa-signature"></i>
+                </div>
+                <div class="div">
+                    <h5>Nombre</h5>
+                    <input th:field="*{nombre}" type="text" id="nombre" class="input" placeholder="Ingrese Nombre" required="true"/>
+
+                </div>
+            </div>
+            <div class="input-div two">
+                <div class="i">
+                    <i class="fas fa-signature"></i>
+                </div>
+                <div class="div">
+                    <h5>Apellido</h5>
+                    <input th:field="*{apellido}" type="text" id="Apellido" class="input" placeholder="Ingrese Apellido" required="true"/>
+
+                </div>
+            </div>
+            <div class="input-div two">
+                <div class="i">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="div">
+                    <h5>Username</h5>
+                    <input th:field="*{userName}" type="text" id="username" class="input" placeholder="Ingrese Usuario" required="true"/>
+
+                </div>
+            </div>
+            <div class="input-div two">
+                <div class="i">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="div">
+                    <h5>Contraseña</h5>
+                    <input th:field="*{contraseña}" type="text" id="password" class="input" placeholder="Ingrese Nombre" required="true"/>
+
+                </div>
+            </div>
+            <div class="input-div two">
+                <div class="i">
+                    <i class="fas fa-id-card"></i>
+                </div>
+                <div class="div">
+                    <h5>Documento</h5>
+                    <input th:field="*{nroDocumento}" type="text" id="documento" class="input" placeholder="Ingrese Documento" required="true"/>
+
+                </div>
+            </div>
+            <div class="input-div two">
+                <div class="i">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="div">
+                    <h5>Telefono</h5>
+                    <input th:field="*{telefono}" type="text" id="telefono" class="input" placeholder="Ingrese Telefono" required="true"/>
+                </div>
+            </div>
+            <div class="input-div two">
+                <div class="i">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="div">
+                    <h5>Direccion</h5>
+                    <input th:field="*{direccion}" type="text" id="direccion" name="adress" placeholder="Ingrese Direccion" required="true"/>
+
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+         
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head> 
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="../icons/Favicon.svg" type="image/x-icon" />
+<script src="../Js/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" href="../Css/general.css" />
+<link rel="stylesheet" href="../Css/inicio.css" />
+<script src="../Js/inicio.js" defer></script>
+<script src="../Js/general.js" defer></script>
+<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+
+<!--Fuentes en linea-->
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet" />
+<title>BlueMoonShop</title>
+</head>
+<body>
+	<header>
+		<nav th:fragment="nav">
+			<img class="logo-blanco"
+				src="../icons/Logo blanco.svg"
+				alt="No se Encuentra" />
+			<div id="herramientas">
+				<div id="caja-busqueda">
+					<input type="text" id="buscador" placeholder="Buscar..."
+						   autocomplete="off" />
+					<div class="btn-buscar" id="btn-buscar">
+						<i class="fas fa-search"></i>
+						<div id="resultados">
+							<c:forEach items="${lstProductos}" var="a">
+								<a
+										href="../static/crudprod?opcion=comprar&cod=${a.idProducto}">
+									<div>
+										<img
+												src="${pageContext.request.contextPath}/img/${a.idProducto}.jpg"
+												alt="" />
+										<h2></h2>
+									</div>
+								</a>
+							</c:forEach>
+						</div>
+					</div>
+				</div>
+				<div id="btn-usuario" class="usuario">
+					<i class="far fa-user-circle icons"></i>
+					<div id="usuario">
+						<i class="fas fa-caret-up"></i>
+						<h4 id="msj">
+							Bienvenido a<br />BlueMoonShop
+						</h4>
+						<a href="${pageContext.request.contextPath}/client?opcion=cerrar">
+						<img src="../icons/Grupo 64.svg" id="hombre" alt="No se encuentra la imagen" /></a>
+						<h3 id="nombre">${cliente.nombre}</h3>
+					</div>
+				</div>
+				<div id="carrito">
+					<i class="fas fa-shopping-cart icons"></i> <b id="ncompras">0</b>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<section>
+			<div id="baner" th:fragment="banner">
+				<img id="img-baner" src="../icons/Banner1.svg" alt="No se Encuentra " /> 
+				<i class="fas fa-circle indice"></i> <i class="fas fa-circle indice"></i> 
+				<i class="fas fa-circle indice"></i>
+			</div>
+			<h2 id="title-cat">Categorias</h2>
+			<div id="categoria">
+				<div class="cat">
+					<a href="#"><img src="../icons/Imagen 1.png" alt="No se encuentra la imagen" />
+						<h2 class="h2-cat">Hogar</h2></a>
+				</div>
+				<div class="cat">
+					<a th:href="@{/product/5}"><img src="../icons/F1.png" alt="No se encuentra la imagen" />
+						<h2 class="h2-cat">Salud y Belleza</h2></a>
+				</div>
+				<div class="cat">
+					<a href="#"><img src="../icons/Imagen 2.png" alt="No se encuentra la imagen" />
+						<h2 class="h2-cat">Tecnologia</h2></a>
+				</div>
+				<div class="cat">
+					<a href="#"><img src="../icons/C4.png" alt="No se encuentra la imagen" />
+						<h2 class="h2-cat">Moda</h2></a>
+				</div>
+				<div class="cat">
+					<a href="#"><img src="../icons/PS3.png" alt="No se encuentra la imagen" />
+						<h2 class="h2-cat">Papeleria</h2></a>
+				</div>
+			</div>
+			     <h2 id="title-vent">
+				      <i class="fab fa-hotjar"></i>
+				         Mas Vendidos
+			     </h2>
+			       <div id="Ventas">
+					     <div class="row">
+									<figure th:each="p:${lstmasVendidos}" class="compras">
+										<img th:src="@{${'img/' + p.idProducto + '.jpg'}}" alt="" />
+									     	<h5 th:text="${p.nombreProducto}"></h5>
+										<h2 th:text="${'S/' + p.precioUnidad}" >
+										</h2>
+										<form action="${pageContext.request.contextPath}/crudprod"
+											method="post">
+											<input type="hidden" name="cod" value="${p.idProducto}">
+											<input class="btn-compras" type="submit" name="opcion"
+												value="comprar">
+										</form>
+									</figure>
+					</div>
+				</div>
+			<div id="mensaje">
+				<iframe width="500" height="360"
+					src="https://www.youtube.com/embed/vWsuSQVs8X0" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
+				<h2>Compra Resposablemente</h2>
+			</div>
+		</section>
+		<div class="btn">
+			<span class="fas fa-bars"></span>
+		</div>
+		<aside class="sidebar" th:fragment="menu">
+			<ul>
+				<li class="active"><a href="#">
+				<i class="fas fa-home"></i>Inicio</a></li>
+				<li><a href="#" class="feat-btn"><i class="fas fa-tags"></i>Categorias
+						<span class="fas fa-caret-down first"></span> </a>
+					<ul class="feat-show">
+						<li><a th:href="@{/product/5}">Salud y Belleza</a></li>
+						<li><a th:href="@{/product/2}">Moda</a></li>
+						<li><a th:href="@{/product/3}">Tecnologia</a></li>
+						<li><a th:href="@{/product/1}">Hogar</a></li>
+						<li><a th:href="@{/product/4}">Papeleria</a></li>
+					</ul></li>
+				<li><a href="#" class="tiendas-btn"><i class="fas fa-store"></i>Tiendas
+						<span class="fas fa-caret-down second"></span> </a>
+					<ul class="tiendas-show">
+						<li><a
+							href="#">San Miguel</a></li>
+						<li><a href="#">Breña</a></li>
+						<li><a href="#">Miraflores</a></li>
+					</ul></li>
+				<li><a
+					href="#"><i class="fas fa-phone-alt"></i>Contactanos</a></li>
+			</ul>
+		</aside>
+	</main>
+	<footer th:fragment="footer">
+		<ul>
+			<h2>Tiendas</h2>
+			<li>San Miguel</li>
+			<li>Breña</li>
+			<li>Miraflores</li>
+		</ul>
+		<ul>
+			<h2>Contactanos</h2>
+			<li>Telf : 989899989</li>
+			<li>Whatsapp : 987653678</li>
+			<li>Correo : Bluemoon@cibertec.com</li>
+		</ul>
+		<img class="logo-blanco2"
+			src="../icons/Logo blanco.svg"
+			alt="No se Encuentra" />
+	</footer>
+
+	<script>
+		var ruta = "../";
+	</script>
+</body>
+</html>

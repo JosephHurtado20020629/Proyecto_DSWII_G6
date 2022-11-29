@@ -1,0 +1,306 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+}
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+nav {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 64px;
+  background-color: #384358;
+  z-index: 100;
+}
+#herramientas {
+  display: flex;
+  width: 128px;
+  height: 100%;
+  float: right;
+}
+.logo-blanco {
+  height: 50px;
+  margin: 5px;
+}
+.usuario,
+#carrito {
+  margin: 0;
+  display: block;
+  width: 64px;
+  height: 100%;
+  transition: 1s;
+  float: right;
+}
+
+#caja-busqueda {
+  position: absolute;
+  top: 3px;
+  right: 128px;
+  height: 60px;
+  border-radius: 40px;
+  padding: 10px;
+}
+#btn-buscar {
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#btn-buscar > i {
+  font-size: 30px;
+}
+
+#buscador {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.6s;
+  line-height: 40px;
+  width:0;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+#resultados {
+  display: none;
+  position: fixed;
+  top: 63px;
+  right: 30px;
+  overflow-y:hidden;
+  transform: translate(-50%);
+  height: 540px;
+}
+
+#resultados div {
+  display: flex;
+  width: 290px;
+  background-color: white;
+  border-left: 1px solid rgb(48 61 86);
+  border-right: 1px solid rgb(48 61 86);
+  border-bottom: 1px solid rgb(48 61 86);
+  color: gray;
+  height: 90px;
+  font-size: 60%;
+  transition: 0.5s;
+  text-align: center;
+}
+#resultados div h2{
+  width: 200px;
+  margin: auto;
+}
+#resultados div img {
+  width: 80px;
+  height: 70px;
+  margin: auto;
+  border: 2px solid darkgray;
+  border-radius: 5px;
+}
+#resultados div:hover {
+  color: #303d56;
+}
+.icons {
+  margin: 16px;
+  font-size: 32px;
+  color: white;
+}
+.fa-caret-up {
+  font-size: 50px;
+  color: white;
+  position: absolute;
+  top: -32px;
+  right: 70px;
+}
+#usuario {
+  position: fixed;
+  display: none;
+  transform: translate(-50%, -50%);
+  top: 188px;
+  right: -80px;
+  width: 180px;
+  color: #303d56;
+  background-color: white;
+  border: 1px solid darkgray;
+  border-radius: 30px;
+  transition: all 500ms linear;
+}
+#usuario h4{
+  font-family:'Nerko One', cursive;;
+  font-style:bold;
+  margin-top: 20px;
+  font-size: 25px;
+  text-align: center;
+}
+#usuario h3{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+#usuario img {
+  width: 130px;
+  margin:5px 25px;
+}
+#carrito b {
+  position: absolute;
+  top: 20px;
+  right: 14px;
+  width: 25px;
+  height: 12px;
+  color: #384358;
+  border-radius: 50%;
+  font-size: 12px;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+.btn{
+  position: fixed;
+  top: 75px;
+  left: 10px;
+  height: 45px;
+  width: 45px;
+  z-index: 100;
+  text-align: center;
+  background: #384358;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: left 0.7s ease;
+}
+.btn.click{
+  left: 310px;
+}
+.btn span{
+  color: white;
+  font-size: 28px;
+  line-height: 45px;
+}
+.btn.click span:before{
+  content: '\f00d';
+}
+.sidebar{
+  position: fixed;
+  top: 64px;
+  width: 300px;
+  height: 100%;
+  left: -300px;
+  z-index: 200;
+  background: #384358;
+  transition: left 0.7s ease;
+}
+.sidebar.show{
+  left: 0px;
+}
+
+aside ul{
+  background: #475267;
+  height: 100%;
+  width: 100%;
+  list-style: none;
+}
+aside ul li{
+  line-height: 60px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+aside ul li:last-child{
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+aside ul li a{
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 21px;
+  padding-left: 10px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  border-left: 3px solid transparent;
+}
+aside ul li.active a{
+  border-left-color: white;
+}
+aside ul ul{
+  position: static;
+  display: none;
+}
+aside ul .feat-show.show{
+  display: block;
+}
+aside ul .tiendas-show.show1{
+  display: block;
+}
+
+aside ul .producto-show.show2{
+  display: block;
+}
+aside ul ul li{
+  line-height: 42px;
+  border-top: none;
+}
+aside ul ul li a{
+  font-size: 20px;
+  color: #e6e6e6;
+  padding-left: 80px;
+}
+aside ul li a i{
+  font-size: 32px;
+  margin: 16px;
+}
+aside ul li.active ul li a{
+  color: #e6e6e6;
+  background: #384358;
+  border-left-color: transparent;
+  border-bottom: 1px solid rgba(255,255,255,0.05)
+}
+
+aside ul li a span{
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: transform 0.5s;
+}
+aside ul li a span.rotate{
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+footer{
+  position: relative;
+  top: 30vh;
+  width: 100%;
+  height: 300px;
+  background-color: #303d56;
+  display: block;
+}
+footer ul{
+  position: relative;
+  top: 10%;
+  margin: 40px 70px;
+  display: inline-block;
+  color: white;
+}
+.logo-blanco2{
+    width: 40%;
+    margin: auto;
+
+}
+
+
+
+
