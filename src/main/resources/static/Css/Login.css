@@ -10,6 +10,12 @@ body {
   margin: auto 5px;
 }
 
+body {
+  background-image: url(../icons/fondo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .logo {
   width: 290px;
   margin-top: 2%;
@@ -166,7 +172,7 @@ form {
   border-radius: 25px;
   outline: none;
   border: none;
-  background-image: linear-gradient(to right, #475267, #6b84b3, #475779);
+  background-image: linear-gradient(to right, #318B8B, #3CA3A3, #475779);
   background-size: 200%;
   font-size: 1.2rem;
   color: #fff;

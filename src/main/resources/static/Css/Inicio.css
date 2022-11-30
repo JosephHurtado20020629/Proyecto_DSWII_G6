@@ -1,0 +1,409 @@
+body {
+    background-image: url(../icons/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    box-shadow: 0 0 0 30px white inset !important;
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+    text-decoration-thickness: none !important;
+    text-decoration-style: none !important;
+}
+input:focus {
+    outline: none !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-custom input::-webkit-outer-spin-button,
+.form-custom input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+}
+
+.form-custom input[type=number] {
+    -moz-appearance: textfield !important;
+}
+
+.container-banner-promo{
+    height: 23vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row1 {
+    display: flex;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) * -0.5);
+    margin-left: calc(var(--bs-gutter-x) * -0.5);
+}
+
+.row1 > * {
+    flex-shrink: 0;
+    width: 114px !important;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    margin-top: var(--bs-gutter-y);
+}
+
+.margen-simular-dolar{
+    margin-top:30px;
+}
+
+.fs-16 {
+    font-size: calc(13.6px + (16 - 12) * ((100vw - 375px) / (1920 - 375)));
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.fs-16-bold{
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.newCompraVentaBlock {
+    width: 100%;
+    grid-template-columns: 20% 80%;
+    margin-bottom: 21px;
+    align-items: center;
+}
+
+#item_compra div > div > strike, #item_venta  div > div > strike {
+    /*font-size: calc(13.6px + (16 - 12) * ((100vw - 375px) / (1920 - 375)));*/
+    font-size: calc(14px + (12 - 12) * ((100vw - 375px) / (1920 - 375)));
+    color: #93C2FF;
+}
+
+#item_compra div > div > span {
+    font-size: calc(14px + (12 - 12) * ((100vw - 375px) / (1920 - 375)));
+    color: darkblue;
+    font-weight: 400 !important;
+}
+
+#item_venta  div > div > span {
+    font-size: calc(14px + (12 - 12) * ((100vw - 375px) / (1920 - 375)));
+    color: darkblue;
+    font-weight: 400 !important;
+}
+
+#item_compra div > div {
+    align-self: center;
+} > .fs-16-bold {
+      /*Para texto Compra*/
+      font-size: 13px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+      color:darkblue;
+  }
+
+#item_venta div > div {
+    align-self: center;
+} > .fs-16-bold {
+      /*Para texto Venta*/
+      font-size: 13px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+      color: darkblue;
+  }
+.tipoCContainer {
+    display: flex;
+    flex-direction: row;
+    margin-left: 4px;
+}
+
+#item_compra {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 2px;
+    gap: 10px;
+    width: 259px;
+    height: 34px;
+    background: #FFFFFF;
+    border: 1.5px solid #318B8B;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#item_venta {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 2px;
+    gap: 10px;
+    width: 259px;
+    height: 34px;
+    background: #FFFFFF;
+    border: 1.5px solid #318B8B;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.spacing {
+    width: 114px;
+    justify-content: space-between;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.textInputHeader {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    z-index: 2;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    width: 79px;
+    background: white;
+    padding: 4px 8px;
+    margin-bottom: -15px;
+    margin-left: 15px;
+    text-align: center;
+    color: darkblue !important;
+}
+
+label.error {
+    font-size: 13px;
+    line-height: 14px;
+    display: block;
+    margin-bottom: 0px;
+    margin-top: 9px;
+}
+
+.txtForm h3 {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #004CAE;
+    text-align: center;
+    margin-bottom: 19px;
+}
+
+.b1CajaWrap {
+    position: relative;
+}
+
+.b1Caja {
+    height: 64px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -o-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding-left: 36px;
+    padding-right: 36px;
+    border-radius: 50px;
+    -webkit-box-shadow: 0 1px 8px 0 rgba(35, 117, 240, 0.36);
+    box-shadow: 0 1px 1px 0 rgba(35, 117, 240, 0.36);
+    margin-bottom: 11px;
+    position: relative;
+}
+
+.b1Caja.revert {
+    -webkit-box-direction: reverse;
+    -moz-box-direction: reverse;
+    -o-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -o-box-orient: horizontal;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+
+.b1Caja.revert .b1Pais {
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    -o-box-pack: end;
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+.b1Caja.revert .b1Pais:last-child {
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -o-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.b1Caja.revert.inputs .b1Input:last-child input {
+    padding-left: 65px;
+    padding-right: 0;
+    text-align: left;
+}
+
+.b1Caja.revert.inputs .b1Input input {
+    text-align: right;
+    padding-left: 0;
+    padding-right: 65px;
+}
+
+.b1Caja.inputs {
+    padding: 12px 16px 12px 24px;
+    -webkit-box-shadow: 0 0 0;
+    box-shadow: 0 0 0;
+    border: 1px solid #318B8B;
+    border-radius: 12px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.b1Input {
+    width: 100%;
+}
+
+.b1Input ::-webkit-input-placeholder {
+    color: #C9CEDA;
+    font-family: "Roboto-Regular", sans-serif;
+}
+
+.b1Input :-moz-placeholder {
+    color: #C9CEDA;
+    font-family: "Roboto-Regular", sans-serif;
+}
+
+.b1Input ::-moz-placeholder {
+    color: #C9CEDA;
+    font-family: "Roboto-Regular", sans-serif;
+}
+
+.b1Input :-ms-input-placeholder {
+    color: #C9CEDA;
+    font-family: "Roboto-Regular", sans-serif;
+}
+
+.b1Input:last-child input {
+    text-align: left;
+    padding-left: 0;
+    padding-right: 65px;
+}
+
+.b1Input input {
+    border: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    letter-spacing: 0.04em;
+    color: #373737;
+}
+
+.b1Caja span {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: left;
+    color: #373737;
+    width: 20px;
+    margin: 0px;
+    flex: 0 0 30px;
+}
+
+.b1Form {
+    max-width: 100%;
+    width: 560px;
+    box-shadow: 12px 13px 39px 0 rgba(35, 128, 240, 0.18);
+    background: #fff;
+    padding: 40px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 65px auto;
+}
+
+.b1Form .gButton {
+    margin: auto;
+}
+
+.b1Form h3 {
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.5;
+    color: darkblue;
+    text-align: center;
+    margin-bottom: 19px;
+    font-style: normal;
+    font-weight: 600;
+
+}
+.title {
+    text-align: center;
+    margin: 50px auto;
+    font-family: sans-serif;
+    color: #318B8B;
+}
+
+.b1Intercambio2 {
+    position: absolute;
+    top: 42%;
+    right:10px;
+    z-index: 20;
+}
+#monedaEnvia ,
+#monedaRecibe {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.btnlogin {
+    font-size: 30px;
+    float: right;
+    margin: -43px 20px;
+    border: 2px dashed #318B8B;
+    padding: 10px;
+    color: #318B8B;
+    text-decoration: none;
+}
+.btnlogin {
+    text-decoration: none;
+    color: #318B8B;
+}

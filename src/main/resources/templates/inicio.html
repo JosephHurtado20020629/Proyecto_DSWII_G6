@@ -4,29 +4,83 @@
     <meta charset="UTF-8">
     <title>Inicio</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Css/Inicio.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+
 </head>
 <body style="">
-<div style="display:flex;flex-direction:column;align-items:center;width: 400px;height: 800px;background: #6b84b3">
-    <div style="display: flex">
-        <div>
-            <h3>Compra</h3>
-            <span>3.654</span>
+<a th:href="@{/login}" class="btnlogin">Administrador</a>
+<!-- cotizador -->
+<div class="b1Form margen-simular-dolar">
+    <form action="">
+        <div class="txtForm">
+            <h3>PRECIO ACTUAL DEL D&Oacute;LAR</h3>
         </div>
-        <div>
-            <h3>Venta</h3>
-            <span>3.985</span>
+
+        <div class="newCompraVentaBlock">
+            <div class="tipoCContainer">
+                <div id="item_compra" style="cursor: pointer">
+                    <div class="row1 spacing">
+                        <div class="text-center">
+                            <span class="fs-16-bold">Compra: </span>
+                            <span class="fs-16-bold" style="font-weight: 600 !important;">3.876</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="item_venta" style="cursor: pointer">
+                    <div class="row1 spacing">
+                        <div class="text-center">
+                            <span class="fs-16-bold">Venta: </span>
+                            <span class="fs-16-bold" style="font-weight: 600 !important;">4.876</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
-    </div>
-    <div style="display: flex;width: 100%">
-        <div>
-            <input type="text">
+        <div class="b1Conversor">
+            <div class="b1CajaWrap">
+                <a href="" class="b1Intercambio2 cambiarMoneda">
+                    <img src="../icons/btn_intercambio.svg">
+                </a>
+
+                <div id="textInputCambiar" class="textInputHeader">ENV&Iacute;AS</div>
+                <div class="b1Caja inputs">
+                    <span id="monedaEnvia">$</span>
+                    <div class="b1Input">
+                        <input
+                                style="padding-left: 0 !important;"
+                                type="number"
+                                placeholder="400.00"
+                        />
+                    </div>
+
+                </div>
+                <div id="textInputRecibe" class="textInputHeader">RECIBES</div>
+                <div class="b1Caja inputs">
+                    <span id="monedaRecibe">S/</span>
+                    <div class="b1Input">
+                        <input
+                                style="padding-left: 0 !important;"
+                                type="number"
+                                placeholder="1140.00"
+                        />
+                    </div>
+
+                </div>
+            </div>
+
+
         </div>
-        <div>
-            <input type="text">
-        </div>
-    </div>
-    <canvas id="graphWAU"></canvas>
+    </form>
 </div>
+
+
+    <!--grafico estadistico -->
+    <canvas id="graphWAU"></canvas>
+
 </body>
-<script src="/static/js/inicio.js"></script>
+<script src="../static/js/inicio.js"></script>
 </html>
