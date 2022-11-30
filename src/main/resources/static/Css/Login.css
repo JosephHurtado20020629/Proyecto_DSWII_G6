@@ -181,6 +181,7 @@ form {
   margin: 4rem 0;
   cursor: pointer;
   transition: 1s;
+  text-decoration:none;
 }
 
 .btn:hover {

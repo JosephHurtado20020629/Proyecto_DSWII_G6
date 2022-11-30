@@ -32,22 +32,19 @@
                 <div class="i">
                     <i class="fas fa-lock"></i>
                 </div>
-                <div class="div">`
+                <div class="div">
                     <h5>Contraseña</h5>
                     <input type="password" id="password"  name="password" class="input" autocomplete="off" required="true"/>
                 </div>
             </div>
 
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-            <button type="submit" class="btn" value="login">Ingresar</button>
+            <a type="submit" class="btn" th:href="@{/tc/listar}">Ingresar</a>
             <p> ¿No tienes una cuenta?
                 <a  style="text-decoration: none;padding: 4%" th:href="@{/cliente/cargar}">Registrate aqu&#237;</a>
             </p>
 
             <p style="color: red" th:if="${error}" id="error">Usuario o Contraseña invalidos</p>
         </form>
-
-
     </div>
 </div>
 <script type="text/javascript" src="../Js/main.js"></script>
