@@ -32,9 +32,7 @@
 					<td th:text="${t.firstValue}"></td>
 					<td th:text="${t.maxValue}"></td>
 					<td th:text="${t.minValue}"></td>
-					<!--
-					<td th:text = "${p.idcategoria}"></td>-->
-					<td th:text="${t.id}"></td>
+
 					<td>
 						<form th:action="@{/tc/editar}" method="post">
 							<input type="hidden" name="idCodigo" th:value="${t.id}">
