@@ -27,12 +27,12 @@ obtenerTipoCambio();
 
 $('#input-envias').on('input', function () {
     $('#input-recibes').val(($(this).val() / obj.compra ?? 0).toFixed(2));
-    $('#orientador').text('Estas comprando dolares')
+    $('#orientador').text('Estas comprando dolares'.toUpperCase())
 })
 
 $('#input-recibes').on('input', function () {
     $('#input-envias').val(($(this).val() * obj.venta ?? 0).toFixed(2))
-    $('#orientador').text('Estas vendiendo dolares')
+    $('#orientador').text('Estas vendiendo dolares'.toUpperCase())
 })
 
 
