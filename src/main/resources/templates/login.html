@@ -41,9 +41,9 @@
                 </div>
             </div>
 
-            <a type="submit" class="btn" th:href="@{/tc/listar}">Ingresar</a>
+            <button type="submit" class="btn" value="login">Ingresar</button>
             <p> ¿No tienes una cuenta?
-                <a  style="text-decoration: none;padding: 4%" th:href="@{/user/listarUsuario}">Registrate aqu&#237;</a>
+                <a  style="text-decoration: none;padding: 4%" th:href="@{/user/registrarUsuario}">Registrate aqu&#237;</a>
             </p>
 
             <p style="color: red" th:if="${error}" id="error">Usuario o Contraseña inválidos</p>

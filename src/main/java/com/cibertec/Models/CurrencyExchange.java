@@ -1,11 +1,15 @@
 package com.cibertec.Models;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Data
 @Entity
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
 @Table(name = "tb_currency_exchange")
 public class CurrencyExchange {
 
@@ -13,23 +17,18 @@ public class CurrencyExchange {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    private Double buy;
+
+    private Double sell;
+
     private String date;
 
-    private Double lastValue;
-
-    private Double firstValue;
-
-    private Double maxValue;
-
-    private Double minValue;
-
-    public CurrencyExchange(String date,Double lastValue,Double firstValue,Double maxValue,Double minValue){
-        this.date= date;
-        this.lastValue =lastValue;
-        this.firstValue=firstValue;
-        this.maxValue = maxValue;
-        this.minValue = minValue;
+    public CurrencyExchange(Double buy, Double sell, String date) {
+        this.buy = buy;
+        this.sell = sell;
+        this.date = date;
     }
+
 
     public CurrencyExchange() {
 

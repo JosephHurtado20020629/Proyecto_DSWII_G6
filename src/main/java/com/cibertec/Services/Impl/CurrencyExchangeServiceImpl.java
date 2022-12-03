@@ -6,6 +6,8 @@ import com.cibertec.Models.CurrencyExchange;
 import com.cibertec.Repositories.CurrencyExchangeRepository;
 import com.cibertec.Services.CurrencyExchangeService;
 
+import java.util.List;
+
 @Service
 public class CurrencyExchangeServiceImpl implements CurrencyExchangeService {
 
@@ -15,5 +17,15 @@ public class CurrencyExchangeServiceImpl implements CurrencyExchangeService {
     @Override
     public Integer save(CurrencyExchange currencyExchange) {
         return currencyExchangeRepository.save(currencyExchange).getId();
+    }
+
+    @Override
+    public CurrencyExchange findTheCurrent() {
+        return currencyExchangeRepository.findTop1ByOrderByDateDesc();
+    }
+
+    @Override
+    public List<CurrencyExchange> findAllByOrderByDateAsc() {
+        return currencyExchangeRepository.findAllByOrderByDateAsc();
     }
 }

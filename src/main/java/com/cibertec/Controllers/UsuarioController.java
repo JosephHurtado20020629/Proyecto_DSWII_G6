@@ -50,13 +50,13 @@ public class UsuarioController {
             usuarioService.guardarUsuario(usuario);
 
 
-            return "redirect:/listarUsuario";
+            return "redirect:/iniciar-sesion";
 
         } catch (Exception e) {
             System.out.println("Error: " + e);
-            return "listarUsuario";
+            return "redirect:/iniciar-sesion";
         }
-        //return "redirect:/login";
+        //return "redirect:/iniciar-sesion";
 
     }
 
@@ -72,6 +72,6 @@ public class UsuarioController {
     public String eliminarUsuario(Usuario usuario, Model model){
         usuarioService.eliminarUsuario(usuario);
 
-        return "redirect:/login";
+        return "redirect:/iniciar-sesion";
     }
 }
