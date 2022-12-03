@@ -37,14 +37,17 @@
                     <th scope="col">ID</th>
                     <th scope="col">Username</th>
                     <th scope="col">Password Encriptado</th>
-                    <!--<th scope="col">Id Rol</th>-->
+                    <th scope="col">Acciones</th>
                 </tr>
 
                 <tr  th:each="usuario : ${usuarios}" >
                     <td   th:text="${usuario.idusuario}"> Mostrar id </td>
                     <td   th:text="${usuario.username}"> Mostrar username </td>
                     <td   th:text="${usuario.password}"> Mostrar password </td>
-                    <!--<td   th:text="${usuario.idrol}"> Mostrar Rol </td>-->
+                    <td >
+                        <a th:href="@{'/user/actualizarUsuario/'+${usuario.idusuario}}">&#9998;</a>
+                        <a th:href="@{'/user/eliminarUsuario/'+${usuario.idusuario}}">&#10006;</a>
+                    </td>
                 </tr>
 
             </table>

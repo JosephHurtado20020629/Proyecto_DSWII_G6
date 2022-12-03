@@ -3,7 +3,6 @@ package com.cibertec.Controllers;
 import com.cibertec.Models.Usuario;
 import com.cibertec.Services.UsuarioService;
 import com.cibertec.util.EncriptarString;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +20,7 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @GetMapping("/listarUsuario")
-    public String listarUsuario(Model model, Usuario usuario){
+    public String listarUsuario(Model model, Usuario usuario) {
 
         var usuarios = usuarioService.listarUsuarios();
         model.addAttribute("usuarios", usuarios);
@@ -30,14 +29,15 @@ public class UsuarioController {
     }
 
     @GetMapping("/registrarUsuario")
-    public String registrarUsuario(Usuario usuario){
+    public String registrarUsuario(Usuario usuario, Model model) {
+        model.addAttribute("action", "Registrar");
         return "registrarUsuario";
     }
 
     @PostMapping("/guardarUsuario")
-    public String guardarUsuario(@RequestParam("password") String passw,
+    public String guardarUsuario(@RequestParam("password") String passw, @RequestParam("action") String action,
                                  Usuario usuario,
-                                 Errors errores){
+                                 Errors errores) {
 
         if (errores.hasErrors()) {
             return "registrarUsuario";
@@ -49,29 +49,30 @@ public class UsuarioController {
 
             usuarioService.guardarUsuario(usuario);
 
-
-            return "redirect:/iniciar-sesion";
+            if (action.equals("Actualizar")) return "redirect:/user/listarUsuario";
+            else return "redirect:/iniciar-sesion";
 
         } catch (Exception e) {
             System.out.println("Error: " + e);
             return "redirect:/iniciar-sesion";
         }
-        //return "redirect:/iniciar-sesion";
 
     }
 
     @GetMapping("/actualizarUsuario/{idusuario}")
-    public String actualizarUsuario(Usuario usuario, Model model){
+    public String actualizarUsuario(Usuario usuario, Model model) {
         usuario = usuarioService.encontrarUsuario(usuario);
         model.addAttribute("usuario", usuario);
-
+        model.addAttribute("action", "Actualizar");
         return "registrarUsuario";
     }
 
     @GetMapping("/eliminarUsuario/{idusuario}")
-    public String eliminarUsuario(Usuario usuario, Model model){
+    public String eliminarUsuario(Usuario usuario, Model model) {
         usuarioService.eliminarUsuario(usuario);
 
-        return "redirect:/iniciar-sesion";
+        return "redirect:/user/listarUsuario";
     }
+
+
 }
